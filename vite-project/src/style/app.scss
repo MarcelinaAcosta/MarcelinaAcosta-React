@@ -51,52 +51,91 @@ html, body {
           padding: 0px 5px 12px 5px;
           margin: -41px 0px 19px 26px;
         }
-      
       }
+      
+      // }.List-nav{
+      //         grid-area: nav-menu;
+      //         width: 100vh;
+      //         overflow: hidden;
       .List-nav{
         grid-area: nav-menu;
-        width: 100vh;
-        overflow: hidden;
-        ul{
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          background-color: #cbd6cc;
-          position: fixed;
-          li{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            flex-grow: 1;
-            
-              a{
-              display: block;
-              padding: 10px;
-              text-decoration: none;
-              color: #000;
-              transition: background-color 0.3s;
-            }
-          }
-          li:hover{
-            background-color: rgb(143, 140, 146);
-          }
-          li:hover::before{
-            content: "";
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(2, 3, 2, 0.2);
-            z-index: -1;
-          }
-        }
+              .Ul-container {
+                // grid-area: nav-menu;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                border: 1px solid #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                background-color: #cbd6cc;
+                position: fixed;
+               
+              
+                li {
+                  position: relative;
+                  display: flex;
+                  justify-content: center;
+                  align-items:center ;
+                  flex-grow: 1;
+                  margin-right: 20px;
+                  
+              
+                  a {
+                    display: block;
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 10px;
+              
+                    &:hover {
+                      background-color: #eee;
+                    }
+                  }
+              
+                  .sub-menu-shop,
+                  .sub-menu-childrens,
+                  .sub-menu-stores,
+                  .sub-menu-help {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #050505;
+                    list-style: none;
+                    padding: 0;
+                    border: 1px solid #ccc;
+              
+                    li {
+                      flex-grow: 1;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      position: relative;
+                      margin-right: 20px;
+              
+                      a {
+                        display: block;
+                        padding: 10px;
+                        color: #faf0f0;
+                        text-decoration: none;
+                      }
+                    }
+                  }
+              
+                  &:hover {
+                    .sub-menu-shop,
+                    .sub-menu-childrens,
+                    .sub-menu-stores,
+                  .sub-menu-help {
+                      display: block;
+                    }
+                  }
+                }
+              }
       }
     }
+
     .container-greeting{
       width: 100vh;
       height: 100px;
