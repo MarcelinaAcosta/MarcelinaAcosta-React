@@ -1,4 +1,5 @@
-import GridLayout from "./components/GridLayout"
+import Navbar from "./components/Navbar"
+import ItemListContainer from "./components/ItemListContainer"
  import "./style/app.scss"
 
 
@@ -8,7 +9,8 @@ function App() {
 
   return (
     <>
-     <GridLayout />
+     <Navbar />
+            <ItemListContainer greeting="¡Hola, bienvenido a Venus de Milo!" />
      
     </>
   )

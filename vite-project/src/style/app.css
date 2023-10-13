@@ -6,37 +6,26 @@ html, body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-#root {
-  display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-columns: 100vw; /*ESTO DEFINE TODO EL ANCHO DE LA PANTALLLA*/
-  grid-template-rows: 1fr auto 1fr; /*ESTO DEFINE EL LARGO DE CADA ELEMENTO PRINCIPAL EN LA PANTALLLA*/
+.List-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
 }
-
-.header {
-  background-color: #000;
-  padding: 10px;
-  grid-area: header;
+.List-nav .title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header nav {
-  display: grid;
-  grid-template-areas: "nav-logo1 nav-logo2 nav-carrito" "nav-menu nav-menu nav-menu";
+.List-nav .containerCartwidget {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header nav .ImgLogo1 {
-  grid-area: nav-logo1;
-  width: 227px;
-  height: 93px;
-}
-.header nav .ImgLogo2 {
-  grid-area: nav-logo2;
-  width: 227px;
-  height: 173px;
-}
-.header nav .containerCartwidget {
-  grid-area: nav-carrito;
-  position: relative;
-}
-.header nav .containerCartwidget .numberCartwidget {
+.List-nav .containerCartwidget .numberCartwidget {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -45,10 +34,7 @@ html, body {
   padding: 0px 5px 12px 5px;
   margin: -41px 0px 19px 26px;
 }
-.header nav .List-nav {
-  grid-area: nav-menu;
-}
-.header nav .List-nav .Ul-container {
+.List-nav .Ul-container {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -56,11 +42,10 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   background-color: #cbd6cc;
-  position: fixed;
+  flex: 4;
 }
-.header nav .List-nav .Ul-container li {
+.List-nav .Ul-container li {
   position: relative;
   display: flex;
   justify-content: center;
@@ -68,19 +53,19 @@ html, body {
   flex-grow: 1;
   margin-right: 20px;
 }
-.header nav .List-nav .Ul-container li a {
+.List-nav .Ul-container li a {
   display: block;
   text-decoration: none;
   color: #fff;
   padding: 10px;
 }
-.header nav .List-nav .Ul-container li a:hover {
+.List-nav .Ul-container li a:hover {
   background-color: #eee;
 }
-.header nav .List-nav .Ul-container li .sub-menu-shop,
-.header nav .List-nav .Ul-container li .sub-menu-childrens,
-.header nav .List-nav .Ul-container li .sub-menu-stores,
-.header nav .List-nav .Ul-container li .sub-menu-help {
+.List-nav .Ul-container li .sub-menu-shop,
+.List-nav .Ul-container li .sub-menu-childrens,
+.List-nav .Ul-container li .sub-menu-stores,
+.List-nav .Ul-container li .sub-menu-help {
   display: none;
   position: absolute;
   top: 100%;
@@ -90,10 +75,10 @@ html, body {
   padding: 0;
   border: 1px solid #ccc;
 }
-.header nav .List-nav .Ul-container li .sub-menu-shop li,
-.header nav .List-nav .Ul-container li .sub-menu-childrens li,
-.header nav .List-nav .Ul-container li .sub-menu-stores li,
-.header nav .List-nav .Ul-container li .sub-menu-help li {
+.List-nav .Ul-container li .sub-menu-shop li,
+.List-nav .Ul-container li .sub-menu-childrens li,
+.List-nav .Ul-container li .sub-menu-stores li,
+.List-nav .Ul-container li .sub-menu-help li {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -101,38 +86,27 @@ html, body {
   position: relative;
   margin-right: 20px;
 }
-.header nav .List-nav .Ul-container li .sub-menu-shop li a,
-.header nav .List-nav .Ul-container li .sub-menu-childrens li a,
-.header nav .List-nav .Ul-container li .sub-menu-stores li a,
-.header nav .List-nav .Ul-container li .sub-menu-help li a {
+.List-nav .Ul-container li .sub-menu-shop li a,
+.List-nav .Ul-container li .sub-menu-childrens li a,
+.List-nav .Ul-container li .sub-menu-stores li a,
+.List-nav .Ul-container li .sub-menu-help li a {
   display: block;
   padding: 10px;
   color: #faf0f0;
   text-decoration: none;
 }
-.header nav .List-nav .Ul-container li:hover .sub-menu-shop,
-.header nav .List-nav .Ul-container li:hover .sub-menu-childrens,
-.header nav .List-nav .Ul-container li:hover .sub-menu-stores,
-.header nav .List-nav .Ul-container li:hover .sub-menu-help {
+.List-nav .Ul-container li:hover .sub-menu-shop,
+.List-nav .Ul-container li:hover .sub-menu-childrens,
+.List-nav .Ul-container li:hover .sub-menu-stores,
+.List-nav .Ul-container li:hover .sub-menu-help {
   display: block;
 }
-.header .container-greeting {
+
+.container-greeting {
   width: 100vh;
   height: 100px;
   background-color: #fff;
 }
-.header .container-greeting p {
+.container-greeting p {
   margin: 100px 20px 0px 255px;
-}
-
-.main {
-  padding: 20px;
-  grid-area: main;
-}
-
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  grid-area: footer;
 }/*# sourceMappingURL=App.css.map */

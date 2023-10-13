@@ -1,17 +1,12 @@
 import React from 'react';
 import CartWidget from './Cartwidget';
+import "../style/app.scss"
 
 function Navbar() {
   return (
-    <nav>
-      <div>
-      <img src="../img/Logo1.png" alt="logo" className='ImgLogo1'/>
-      </div>
-      <div>
-      <img src="../img/Logo2.png" alt="logo" className='ImgLogo2'/>
-      </div>
-      <CartWidget />
-      <div className='List-nav'>
+    <nav className='List-nav'>
+      
+        <h1 className='title'>VENUS</h1>
         <ul className='Ul-container'>
             <li><a href="">INICIO</a></li>
             <li>
@@ -51,7 +46,8 @@ function Navbar() {
 						  </ul>
             </li>
        </ul>
-     </div>
+       <CartWidget />
+       
       
     </nav>
   );

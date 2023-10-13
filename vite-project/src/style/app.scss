@@ -8,59 +8,43 @@ html, body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-#root {
-    display: grid;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    grid-template-columns: 100vw; /*ESTO DEFINE TODO EL ANCHO DE LA PANTALLLA*/
-    grid-template-rows: 1fr auto 1fr;/*ESTO DEFINE EL LARGO DE CADA ELEMENTO PRINCIPAL EN LA PANTALLLA*/
-}
 
-.header {
-    background-color: #000;
-    padding: 10px;
-    grid-area: header;
-    nav{
-      display: grid;
-      grid-template-areas:
-        "nav-logo1 nav-logo2 nav-carrito"
-        "nav-menu nav-menu nav-menu";
 
-        .ImgLogo1 {
-          grid-area: nav-logo1;
-            width:  227px;
-            height: 93px;
+
+    .List-nav{
+      display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: cadetblue;
+       .title{
+       flex: 1;
+       display: flex;
+       justify-content: center;
+       align-items: center }
+        
+        // -------------CARRITO-------------
+        .containerCartwidget{
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .numberCartwidget{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 0px 5px 12px 5px;
+            margin: -41px 0px 19px 26px;
+          }
         }
-        .ImgLogo2{
-          grid-area: nav-logo2;
-          width: 227px;
-          height: 173px;
-      }
-      .containerCartwidget{
-        grid-area: nav-carrito;
-        position: relative;
-      
-        .numberCartwidget{
-          position: absolute;
-          width: 10px;
-          height: 10px;
-          background-color: #fff;
-          border-radius: 10px;
-          padding: 0px 5px 12px 5px;
-          margin: -41px 0px 19px 26px;
-        }
-      }
-      
-      // }.List-nav{
-      //         grid-area: nav-menu;
-      //         width: 100vh;
-      //         overflow: hidden;
-      .List-nav{
-        grid-area: nav-menu;
+        // -----------FIN DEL CARRITO----------
+        
+        
               .Ul-container {
-                // grid-area: nav-menu;
+                
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -68,9 +52,10 @@ html, body {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 100%;
+                
                 background-color: #cbd6cc;
-                position: fixed;
+               
+                flex: 4;
                
               
                 li {
@@ -133,8 +118,8 @@ html, body {
                   }
                 }
               }
-      }
-    }
+           }
+
 
     .container-greeting{
       width: 100vh;
@@ -144,17 +129,4 @@ html, body {
         margin: 100px 20px 0px 255px;
       }
     }
-}
-
-.main {
-    padding: 20px;
-    grid-area: main;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    grid-area: footer;
-}
 
