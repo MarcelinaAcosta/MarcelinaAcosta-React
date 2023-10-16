@@ -1,4 +1,4 @@
-import React from 'react';
+
 import "../style/app.scss"
 const CartWidget = () => {
     return (

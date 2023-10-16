@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "shorts",
+    "price": "$698.09",
+    "description": "lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent",
+    "img": "https://www.grisino.com/media/catalog/product/g/0/g0sn05ao.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=800&width=800&canvas=800:800",
+    "category": "children"
+  },
+  {
+    "id": 2,
+    "title": "t-shirt",
+    "price": "$498.11",
+    "description": "condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris",
+    "img": "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw195aa6eb/products/NIDQ3151-100/NIDQ3151-100-1.JPG",
+    "category": "women"
+  },
+  {
+    "id": 3,
+    "title": "jacket",
+    "price": "$595.85",
+    "description": "pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare",
+    "img": "https://topperarg.vtexassets.com/arquivos/ids/302879-1200-1200?width=1200&height=1200&aspect=true",
+    "category": "women"
+  },
+  {
+    "id": 4,
+    "title": "blouse",
+    "price": "$845.33",
+    "description": "eleifend donec ut dolor morbi vel lectus in quam fringilla",
+    "img": "https://acdn.mitiendanube.com/stores/252/220/products/d3008c8e-b5b8-4e6f-a11b-d6e5a05450c2-6d62ae729b68bc07d216935204472012-1024-1024.webp",
+    "category": "men"
+  },
+  {
+    "id": 5,
+    "title": "sweater",
+    "price": "$577.20",
+    "description": "justo pellentesque viverra pede ac diam cras pellentesque volutpat dui",
+    "img": "https://santabohemia.b-cdn.net/Content/UploadDirectory/products/11474/image_62207e01-903a-4b62-8b36-b531d3347124.jpg",
+    "category": "children"
+  },
+  {
+    "id": 6,
+    "title": "jacket",
+    "price": "$732.30",
+    "description": "et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum",
+    "img": "https://topperarg.vtexassets.com/arquivos/ids/300230-1200-1200?width=1200&height=1200&aspect=true",
+    "category": "men"
+  },
+  {
+    "id": 7,
+    "title": "dress",
+    "price": "$483.64",
+    "description": "pretium quis lectus suspendisse potenti in eleifend quam a odio",
+    "img": "https://simpakids.b-cdn.net/Content/UploadDirectory/products/8814/image_ebd44ddc-68ba-49b1-b992-32852c3dc159.jpg",
+    "category": "children"
+  },
+  {
+    "id": 8,
+    "title": "dress",
+    "price": "$591.66",
+    "description": "proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat",
+    "img": "https://mimoar.vtexassets.com/arquivos/ids/17313424-1200-auto?v=638182257673030000&width=1200&height=auto&aspect=true",
+    "category": "women"
+  },
+  {
+    "id": 9,
+    "title": "skirt",
+    "price": "$967.02",
+    "description": "urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate",
+    "img": "https://mimoar.vtexassets.com/arquivos/ids/17582701-1200-auto?v=638309250767400000&width=1200&height=auto&aspect=true",
+    "category": "children"
+  },
+  {
+    "id": 10,
+    "title": "shorts",
+    "price": "$674.44",
+    "description": "eget tincidunt eget tempus vel pede morbi porttitor lorem id",
+    "img": "https://mimoar.vtexassets.com/arquivos/ids/17576462-1200-auto?v=638284089381570000&width=1200&height=auto&aspect=true",
+    "category": "children"
+  }
+  
+]

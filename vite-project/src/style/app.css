@@ -109,4 +109,31 @@ html, body {
 }
 .container-greeting p {
   margin: 100px 20px 0px 255px;
+}
+
+.containerproducts {
+  display: flex;
+}
+.containerproducts .containerCardItem {
+  width: 300px;
+  margin: 10px 30px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: aquamarine;
+}
+.containerproducts .containerCardItem .imgCard {
+  width: 150px;
+  height: 150px;
+}
+
+.item-detail {
+  width: 300px;
+  margin: 10px 30px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: aquamarine;
+}
+.item-detail .imgCard {
+  width: 150px;
+  height: 150px;
 }/*# sourceMappingURL=App.css.map */
