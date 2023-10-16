@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from './ItemDetail'; // Asegúrate de importar ItemDetail o el componente que utilices para mostrar los detalles del producto
+import ItemDetail from './ItemDetail'; 
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     <div id='ItemDetailContainer'>
       
       {product ? (
-        <ItemDetail product={product} /> // Renderiza el componente ItemDetail con los detalles del producto
+        <ItemDetail product={product} /> 
       ) : (
         <div>Cargando...</div>
       )}

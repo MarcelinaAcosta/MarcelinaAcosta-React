@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
@@ -23,15 +22,9 @@ function ItemListContainer() {
       .catch((error) => console.log(error));
   }, [category]); 
  
-
-  
-  
-   return (
+  return (
     <div>
-        
         <ItemList products={products} />
-    
-      
     </div>
   );
    }
