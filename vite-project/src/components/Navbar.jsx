@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CartWidget from './Cartwidget';
 import { Link } from 'react-router-dom';
 import "../style/app.scss"
+import { context } from '../providers/CustomProvider';
 
 function Navbar() {
+  const valorDelContexto = useContext(context)
+  console.log(valorDelContexto.cantidad)
+  
+
   return (
     <nav className='List-nav'>
       <h1 className='title'>VENUS</h1>
@@ -22,8 +27,16 @@ function Navbar() {
         </li>
         <li><Link to="/new">NEW</Link></li>
         <li><Link to="/help">HELP</Link></li>
+        
       </ul>
-      <CartWidget />
+      <Link to="/cart">
+        <button className='buttonCartwidget'>
+              <span className="material-symbols-outlined">shopping_cart</span> 
+          </button>
+        {valorDelContexto.cantidad}
+        
+        </Link>
+      {/* <CartWidget /> */}
     </nav>
   );
 }
