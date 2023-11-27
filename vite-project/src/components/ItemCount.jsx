@@ -22,8 +22,11 @@ export default function ItemCount(props) {
     
     
   };
-  const addToCart = () => {
-    props.onAdd(contador)
+  const addToCart = (quantity) => {
+
+   
+    valorDelContexto.handleIncrementTotal(valorDelContexto.cantidad + quantity);
+    props.handleAddToCart(quantity);
     
     
   };
@@ -38,7 +41,7 @@ export default function ItemCount(props) {
       <button onClick={HandleSumar} className="btn">
         +
       </button>
-      <button onClick={addToCart} className="btn">
+      <button onClick={() => addToCart(contador)} className="btn">
         Agregar al carrito
       </button>
       

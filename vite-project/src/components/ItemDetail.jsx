@@ -4,29 +4,24 @@ import { useContext, useState } from "react";
 
 
 const ItemDetail = ({ product }) => {
+  
   const { carrito, setCarrito } = useContext(context);
   
-  
-
   if (!product) {
     return <div>Loading...</div>;
   }
 
   
   const handleAddToCart = (cantidad) => {
-    const itemAgregado = { ...product, cantidad};
-  setCarrito(itemAgregado);
-  console.log("Producto agregado al carrito:", itemAgregado);
     
+   const itemAgregado = { ...product, cantidad }
+   if (carrito.some((item) => item.id === itemAgregado.id)) {
+     return;
+   }
+   setCarrito([...carrito, itemAgregado]);
+   console.log(carrito);
     
   };
-
-  // const handleAddToCart = (cantidad) => {
-  //   const itemAgregado = { ...product, cantidad};
-  //   agregarAlCarrito(itemAgregado);
-  //   console.log(itemAgregado);
-  //   console.log(carrito);
-  // };
 
   
 
@@ -36,12 +31,8 @@ const ItemDetail = ({ product }) => {
       <h2>{product.title}</h2>
       <p>{product.description}</p>
       <p>Precio: ${product.price}</p>
-      <ItemCount stock={10} initial={1}  onAdd={handleAddToCart}/>
-      
-
-      
-      {/* Mostrar la cantidad seleccionada */}
-      {/* <p>Cantidad seleccionada: {valorDelContexto.cantidad}</p> */}
+      <ItemCount handleAddToCart={handleAddToCart} stock={10} initial={1} />
+   
     </div>
   );
 };

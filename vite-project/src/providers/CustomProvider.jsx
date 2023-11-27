@@ -13,7 +13,8 @@ function CustomProvider(props) {
     }
     const agregarAlCarrito = (producto) => {
       setCarrito([...carrito, producto]);
-      setCantidadSeleccionada(cantidad + producto.cantidad);
+      // setCantidadSeleccionada(cantidad + producto.cantidad);
+      setCantidadSeleccionada(carrito.length + 1); 
     }
 
     const valorDelContexto = {

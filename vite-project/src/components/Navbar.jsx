@@ -29,14 +29,8 @@ function Navbar() {
         <li><Link to="/help">HELP</Link></li>
         
       </ul>
-      <Link to="/cart">
-        <button className='buttonCartwidget'>
-              <span className="material-symbols-outlined">shopping_cart</span> 
-          </button>
-        {valorDelContexto.cantidad}
-        
-        </Link>
-      {/* <CartWidget /> */}
+      
+      <CartWidget />
     </nav>
   );
 }

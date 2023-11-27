@@ -1,45 +1,32 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { context } from "../providers/CustomProvider"
 import "../style/app.scss"
 import { app } from "../data/FirebaseConfig"
 import { getFirestore, collection, addDoc } from "firebase/firestore"
+import { Link } from "react-router-dom"
+
+
 
 
 
 const CartWidget = () => {
+  const [cartCount, setCartCount] = useState(0)
 
   const valorDelContexto = useContext(context)
 
-    const handleClick = () => {
-      valorDelContexto.toggleDark()
-    }
-    const handleFinalizarCompra = () => { 
-      const compra = {
-        carrito : [],
-        usuario : {},
-        created_at :""
-      }
-
-      const db = getFirestore(app);
-      const comprasCollection = collection(db, "compras");
-      const consulta = addDoc(comprasCollection, compra);
-
-      consulta
-      .then(respuesta => {
-        console.log(respuesta)
-    })
-      .catch(error => {
-        console.log(error)
-    })
-  }
 
     return (
-      
-          <div >
-            <h1>hola</h1>
-            <button onClick={handleFinalizarCompra}>Finalizar Compra</button>
-            
-            </div>
+      <div>
+      <Link to="/cart">
+      <button className='buttonCartwidget'>
+            <span className="material-symbols-outlined">shopping_cart</span> 
+        </button>
+        <span> {valorDelContexto.cantidad}</span>
+       
+      </Link>
+
+       </div>
+
       
     );
   
