@@ -5,7 +5,7 @@ import "./style/app.scss"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import CustomProvider from "./providers/CustomProvider"
 import Carrito from "./components/Carrito"
-import CartWidget from "./components/Cartwidget.jsx"
+
 
 function App() {
   return (

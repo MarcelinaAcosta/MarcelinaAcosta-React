@@ -18,8 +18,11 @@ const ItemDetail = ({ product }) => {
    if (carrito.some((item) => item.id === itemAgregado.id)) {
      return;
    }
-   setCarrito([...carrito, itemAgregado]);
-   console.log(carrito);
+   setCarrito((prevCarrito) => {
+    const nuevoCarrito = [...prevCarrito, itemAgregado];
+    console.log(nuevoCarrito); // Imprime el carrito después de la actualización
+    return nuevoCarrito;
+   })
     
   };
 
