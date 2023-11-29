@@ -24,6 +24,14 @@ html, body {
        align-items: center }
         
         // -------------CARRITO-------------
+        .ContainerCardCart{
+          margin: auto;
+          .imgCardCart{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+          }
+        }
         .containerCartwidget{
           flex: 1;
           display: flex;
