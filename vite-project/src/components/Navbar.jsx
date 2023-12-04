@@ -10,8 +10,14 @@ function Navbar() {
   
 
   return (
+    <div className='container_List-Nav'>
+      <div className='textHeader'>
+        <p>cuotas sin interes </p>
+      </div>
     <nav className='List-nav'>
-      <h1 className='title'>VENUS</h1>
+      <div>
+        <img src="../img/logo1_2.png" alt="logo" className='List-nav_Logo' />
+      </div>
       <ul className='Ul-container'>
         <li>
           <Link to="/">HOME</Link>
@@ -32,6 +38,7 @@ function Navbar() {
       
       <CartWidget />
     </nav>
+    </div>
   );
 }
 
