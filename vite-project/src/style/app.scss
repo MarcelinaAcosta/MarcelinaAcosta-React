@@ -39,27 +39,20 @@ html, body {
         align-items: center;
         
         background-color: #fff;
-        padding: 10px 30px;
-        // margin: 10px  20px;
+        padding: 2px 30px;
         
         @include mobile{
           background-color: rgb(98, 243, 231);
         }
-        ul{
-          margin: 0 40px;
+        // ul{
+        //   margin: 0 200px;
           
-        }
-       
-        
-       
-      //  .title{
-      //  flex: 1;
-      //  display: flex;
-      //  justify-content: center;
-      //  align-items: center }
+        // }
+     
        .List-nav_Logo{
-        width: 100px;
-        height: 100x;
+        padding: 5px 10px;
+        width: 70px;
+        height: 63px;
          @include mobile {
             display: none;
          }
@@ -69,21 +62,44 @@ html, body {
         
         // -------------CARRITO-------------
        
-        .containerCartwidget{
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        // .containerCartwidget{
+        //   flex: 1;
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
 
-          .numberCartwidget{
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 0px 5px 12px 5px;
-            margin: -41px 0px 19px 26px;
+        //   .numberCartwidget{
+        //     position: absolute;
+        //     width: 10px;
+        //     height: 10px;
+        //     background-color: #fff;
+        //     border-radius: 10px;
+        //     padding: 0px 5px 12px 5px;
+        //     margin: -41px 0px 19px 26px;
+        //   }
+        // }
+        .tbuttonCartwidge{
+          border: none;
+          background: none;
+          span{
+            // font-size: xx-large;
+           color: #000;
           }
+        }
+        .spanNumber{
+          position: absolute;
+          top: 49px;
+          right: 30px;
+          padding: 3px;
+          font-size: 15px;
+          line-height: 12px;
+          border-radius: 17px;
+          text-align: center;
+          width: 16px;
+          height: 15px;
+          border: 1px solid black;
+          color: white;
+          background: black;
         }
         // -----------FIN DEL CARRITO----------
         
@@ -93,13 +109,9 @@ html, body {
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                border: 1px solid #fff;
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between;
                 align-items: center;
-                
-                background-color: #cbd6cc;
-               
                 flex: 4;
                
               
@@ -108,59 +120,23 @@ html, body {
                   display: flex;
                   justify-content: center;
                   align-items:center ;
-                  flex-grow: 1;
-                  margin-right: 20px;
+                  padding: 0 30px;
+                  // flex-grow: 1;
+                  // margin-right: 10px;
                   
               
                   a {
+                    color: #000;
                     display: block;
                     text-decoration: none;
-                    color: #fff;
-                    padding: 10px;
+                    
               
                     &:hover {
                       background-color: #eee;
                     }
                   }
               
-                  .sub-menu-shop,
-                  .sub-menu-childrens,
-                  .sub-menu-stores,
-                  .sub-menu-help {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: #050505;
-                    list-style: none;
-                    padding: 0;
-                    border: 1px solid #ccc;
-              
-                    li {
-                      flex-grow: 1;
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      position: relative;
-                      margin-right: 20px;
-              
-                      a {
-                        display: block;
-                        padding: 10px;
-                        color: #faf0f0;
-                        text-decoration: none;
-                      }
-                    }
-                  }
-              
-                  &:hover {
-                    .sub-menu-shop,
-                    .sub-menu-childrens,
-                    .sub-menu-stores,
-                  .sub-menu-help {
-                      display: block;
-                    }
-                  }
+                  
                 }
               }
            }

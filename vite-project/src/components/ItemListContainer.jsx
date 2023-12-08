@@ -49,22 +49,13 @@ useEffect(() => {
       console.log(error)
 })
 
-  
-
-    // fetch('/src/data/Products.json')
-    //   .then((respuesta) => respuesta.json())
-    //   .then((res) => {
-    //     if (category) {
-    //       setProducts(res.filter((prod) => prod.category === category));
-    //     } else {
-    //       setProducts(res);
-    //     }
-    //   })
-    //   .catch((error) => console.log(error));
   }, [category]); 
  
   return (
     <div>
+      <div className="coverContainer">
+        <img src="../img/cover.webp" alt="" />
+      </div>
         <ItemList products={products} />
     </div>
   );
