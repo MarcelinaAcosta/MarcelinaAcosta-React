@@ -11,7 +11,7 @@ function ItemListContainer() {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   
-  
+  const [showCover, setShowCover] = useState(true);
 
 useEffect(() => {
 
@@ -22,13 +22,12 @@ useEffect(() => {
     let filtro;
     if (category) {
       filtro = query(productsCollection, where("category", "==", category));
+      setShowCover(false);
     } else {
-      filtro = productsCollection; // Sin filtro si category no está definido
+     filtro = productsCollection; // Sin filtro si category no está definido
+     setShowCover(true);
     }
    
-    // const filtro = query(productsCollection, where("category", "==", "men"));
-    // const filtro = query(productsCollection, where("category", "==", "women"));
-    // const filtro = query(productsCollection, where("category", "==", category));
     
     const consulta = getDocs(filtro)
     
@@ -53,10 +52,12 @@ useEffect(() => {
  
   return (
     <div>
-      <div className="coverContainer">
-        <img src="../img/cover.webp" alt="" />
-      </div>
-        <ItemList products={products} />
+      {showCover && (
+        <div className="coverContainer">
+          <img src="../img/cover.webp" alt="" />
+        </div>
+      )}
+      <ItemList products={products} />
     </div>
   );
    }

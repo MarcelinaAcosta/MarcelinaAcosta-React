@@ -13,7 +13,7 @@ function App() {
     <CustomProvider >
      <Navbar />
      <Routes>
-     <Route path="/" element={<ItemListContainer greeting="¡Hola, bienvenido a Venus de Milo!" />} />
+     <Route path="/" element={<ItemListContainer  />} />
      <Route path="/products/:category" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Carrito />} />

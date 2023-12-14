@@ -10,136 +10,126 @@ html, body {
 }
 
 
-
-    .container_List-Nav{
+// ----------NAVBAR CONTAINER ----------------
+    .container_NavBar {
       margin: 0;
-     
-      .textHeader {
-        
-        background-color: black;
-        display: flex;
-        
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        p{
-          display: inline-block;
-          color: #fff;
-          text-align: center;
-        }
-      }
-      
-      
 
-   
-    .List-nav{
-      display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        
-        background-color: #fff;
-        padding: 2px 30px;
-        
-        @include mobile{
+      // ---------TEXTO PUBLICITARIO ARRIBA DEL NAVBAR-----------------
+        .textHeader {
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+            p{
+              display: inline-block;
+              color: #fff;
+              text-align: center;
+            }
+                    }
+        // ---------- FIN DEL TEXTO PUBLICITARIO ------------------------
+
+        // ------------- NAV BAR LINKS ------------------------------
+        .NavBar {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          padding: 2px 30px;
+          @include mobile{
           background-color: rgb(98, 243, 231);
-        }
-        // ul{
-        //   margin: 0 200px;
-          
-        // }
-     
-       .List-nav_Logo{
-        padding: 5px 10px;
-        width: 70px;
-        height: 63px;
-         @include mobile {
-            display: none;
-         }
-        
-       }
-
-        
-        // -------------CARRITO-------------
-       
-        // .containerCartwidget{
-        //   flex: 1;
-        //   display: flex;
-        //   justify-content: center;
-        //   align-items: center;
-
-        //   .numberCartwidget{
-        //     position: absolute;
-        //     width: 10px;
-        //     height: 10px;
-        //     background-color: #fff;
-        //     border-radius: 10px;
-        //     padding: 0px 5px 12px 5px;
-        //     margin: -41px 0px 19px 26px;
-        //   }
-        // }
-        .tbuttonCartwidge{
-          border: none;
-          background: none;
-          span{
-            // font-size: xx-large;
-           color: #000;
           }
-        }
-        .spanNumber{
-          position: absolute;
-          top: 49px;
-          right: 30px;
-          padding: 3px;
-          font-size: 15px;
-          line-height: 12px;
-          border-radius: 17px;
-          text-align: center;
-          width: 16px;
-          height: 15px;
-          border: 1px solid black;
-          color: white;
-          background: black;
-        }
-        // -----------FIN DEL CARRITO----------
-        
-        
-              .Ul-container {
-                
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                // justify-content: space-between;
-                align-items: center;
-                flex: 4;
-               
-              
+            .NavBarLogo {
+              padding: 5px 10px;
+              width: 70px;
+              height: 63px;
+              @include mobile {
+                display: none;
+              }
+            }
+            .Ul-container {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              flex: 4;
                 li {
                   position: relative;
                   display: flex;
                   justify-content: center;
                   align-items:center ;
                   padding: 0 30px;
-                  // flex-grow: 1;
-                  // margin-right: 10px;
-                  
-              
-                  a {
-                    color: #000;
-                    display: block;
-                    text-decoration: none;
-                    
-              
-                    &:hover {
-                      background-color: #eee;
+                    a {
+                      color: #000;
+                      display: block;
+                      text-decoration: none;
+                      &:hover {
+                        background-color: #eee;
+                      }
                     }
-                  }
-              
-                  
                 }
               }
-           }
+//---------- INPUT BARRA DE BUSQUEDA ---------------
+              .containerSearchInput{
+                display: flex;
+                align-items: center;
+                position: relative;
+                  .inputSearch{
+                    padding: 10px;
+                    border: 1px solid #ccc; /* Borde gris */
+                    border-radius: 2px; /* Bordes redondeados */
+                    background-color: #f2f2f2; /* Fondo gris claro */
+                    font-size: 12px; /* Tamaño del texto */
+                    width: 250px; /* Ancho del input */
+                  }
+                  .inputSearch:focus {
+                    outline: none; /* Elimina el contorno predeterminado al enfocar */
+                    border-color: #f2f2f2; /* Cambia el color del borde al enfocar */
+                  }
+                  .btnSvgSearch{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding-top: 5px;
+                    margin-right: 10px;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                  }
+              }
+ // -------------CARRITO-------------
+            .tbuttonCartwidge{
+              border: none;
+              background: none;
+                span{
+                  color: #000;
+                      }
+              }
+            .spanNumber{
+              position: absolute;
+              top: 49px;
+              right: 30px;
+              padding: 3px;
+              font-size: 15px;
+              line-height: 12px;
+              border-radius: 17px;
+              text-align: center;
+              width: 16px;
+              height: 15px;
+              border: 1px solid black;
+              color: white;
+              background: black;
+            }
+            // -----------FIN DEL CARRITO----------
+
+        } 
+        // --------- FIN DEL NAVBAR LINKS --------------  
+}
+// --------- FIN DEL NAVBAR CONTAINER--------------  
+
+           
            .ContainerCardCart{
             margin: auto;
             
@@ -152,15 +142,7 @@ html, body {
           @media all and (max-width: 480px) { 
 
           }
-        }
-    .container-greeting{
-      width: 100vh;
-      height: 100px;
-      background-color: #fff;
-      p{
-        margin: 100px 20px 0px 255px;
-      }
-    }
+  
     .containerproducts {
       display: flex;
       .containerCardItem{

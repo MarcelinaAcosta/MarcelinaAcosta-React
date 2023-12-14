@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import CartWidget from './Cartwidget';
+import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 import "../style/app.scss"
 import { context } from '../providers/CustomProvider';
@@ -10,13 +11,13 @@ function Navbar() {
   
 
   return (
-    <div className='container_List-Nav'>
+    <div className='container_NavBar'>
       <div className='textHeader'>
         <p>cuotas sin interes </p>
       </div>
-    <nav className='List-nav'>
+    <nav className='NavBar'>
       <div>
-        <img src="../img/logo1_2.png" alt="logo" className='List-nav_Logo' />
+        <img src="../img/logo1_2.png" alt="logo" className='NavBarLogo' />
       </div>
       <ul className='Ul-container'>
         <li>
@@ -35,6 +36,7 @@ function Navbar() {
         <li><Link to="/help">HELP</Link></li>
         
       </ul>
+      <SearchBar />
       
       <CartWidget />
     </nav>
