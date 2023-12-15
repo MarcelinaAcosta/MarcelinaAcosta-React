@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import CartWidget from './Cartwidget';
 import SearchBar from './SearchBar';
+import UserContainer from './UserContainer';
 import { Link } from 'react-router-dom';
 import "../style/app.scss"
 import { context } from '../providers/CustomProvider';
@@ -37,6 +38,7 @@ function Navbar() {
         
       </ul>
       <SearchBar />
+      <UserContainer />
       
       <CartWidget />
     </nav>
