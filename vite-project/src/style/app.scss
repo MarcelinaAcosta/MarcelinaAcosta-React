@@ -13,8 +13,11 @@ html, body {
 // ----------NAVBAR CONTAINER ----------------
     .container_NavBar {
       margin: 0;
+      position: fixed;
+      width: 100%;
 
       // ---------TEXTO PUBLICITARIO ARRIBA DEL NAVBAR-----------------
+      
         .textHeader {
           background-color: black;
           display: flex;
@@ -25,12 +28,28 @@ html, body {
               display: inline-block;
               color: #fff;
               text-align: center;
+              animation-duration: 3s;
+              animation-name: slidein;
+              animation-iteration-count: infinite;
             }
+            @keyframes slidein {
+              from {
+                margin-left: 100%;
+                width: 300%;
+              }
+            
+              to {
+                margin-left: 0%;
+                width: 100%;
+              }
+            }
+            
                     }
         // ---------- FIN DEL TEXTO PUBLICITARIO ------------------------
 
         // ------------- NAV BAR LINKS ------------------------------
         .NavBar {
+         
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -76,6 +95,7 @@ html, body {
                 display: flex;
                 align-items: center;
                 position: relative;
+                margin: 0 40px;
                   .inputSearch{
                     padding: 10px;
                     border: 1px solid #ccc; /* Borde gris */

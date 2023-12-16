@@ -15,7 +15,40 @@ function Navbar() {
     <div className='container_NavBar'>
       <div className='textHeader'>
         <p>cuotas sin interes </p>
-      </div>
+</div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
     <nav className='NavBar'>
       <div>
         <img src="../img/logo1_2.png" alt="logo" className='NavBarLogo' />
