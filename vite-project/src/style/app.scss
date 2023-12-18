@@ -33,11 +33,12 @@ html, body {
           height: 100%;
           transform: translateX(-100%);
           // opacity: 0;
-          animation: slide-in 1s infinite linear;
+          animation: 209.05s linear 0s infinite normal none running marquee;
+          white-space: nowrap;
           
           span {
             display: inline-block;
-            white-space: nowrap;
+            
             color: white;
             font-size: 14px;
             font-weight: lighter;
