@@ -13,17 +13,15 @@ function Navbar() {
 
   return (
     <div className='container_NavBar'>
-      {/* <div className='textHeader'>
-        <p>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳 </p>
-        <p>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳 </p>
-        <p>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳 </p>
-        <p>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳 </p>
-        
-
-
-</div> */}
+      
  <div className="header">
       <div className="text-content">
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
+        <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
         <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
         <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>
         <span>Envíos GRATIS en compras superiores a $80000 🌟 PAGA EN 3 Y 6 CUOTAS SIN INTERÉS con Visa, Master y Amex Bancarias 💳</span>

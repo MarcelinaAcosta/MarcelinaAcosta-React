@@ -23,18 +23,19 @@ html, body {
         height: 40px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        
+        
         .text-content {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 200px;
-          height: 100%;
-          transform: translateX(-100%);
-          // opacity: 0;
-          animation: 209.05s linear 0s infinite normal none running marquee;
-          white-space: nowrap;
+          
+          position: relative;
+  top: 5px;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  
+  animation: slide-in 50s infinite linear reverse;
+  white-space: nowrap;
+  
           
           span {
             display: inline-block;
@@ -42,65 +43,23 @@ html, body {
             color: white;
             font-size: 14px;
             font-weight: lighter;
+            margin: 0 15px;
           }
         }
         
         @keyframes slide-in {
-          from {
-            transform: translateX(50%);
-            // opacity: 0;
+          0% {
+            
+            left: -100%;
           }
         
-          to {
-            transform: translateX(0%);
-            // opacity: 1;
+          100% {
+           left: 100%;
           }
-        
-      }
-      
-    
-      
-      // .container {
-      //   position: relative;
-      //   width: 100%;
-      //   height: 100%;
-      // }
+        }
       
       }
-      .header .text-content {
-        animation: slide-in 45s infinite linear;
-      }
-        // .textHeader {
-        //   background-color: black;
-        //   display: flex;
-        //   flex-direction: row;
-        //   justify-content: flex-start;
-        //   align-items: center;
-        //   height: 30px;
-        //     p{
-        //       display: inline-block;
-        //       color: #fff;
-        //       text-align: center;
-        //       animation-duration: 25s;
-        //       animation-name: slidein;
-        //       animation-iteration-count: infinite;
-        //       animation-timing-function: linear;
-        //       white-space: nowrap;
-        //       transform: translateX(-100%);
-        //     }
-        //     @keyframes slidein {
-        //       from {
-        //         margin-left: 100%;
-        //         width: 300%;
-        //       }
-            
-        //       to {
-        //         margin-left: -200%;
-        //         width: 100%;
-        //       }
-        //     }
-            
-        //             }
+      
         // ---------- FIN DEL TEXTO PUBLICITARIO ------------------------
 
         // ------------- NAV BAR LINKS ------------------------------
