@@ -14,6 +14,8 @@ html, body {
     .container_NavBar {
       margin: 0;
       position: fixed;
+      top: 0;
+      z-index: 999;
       width: 100%;
 
       // ---------TEXTO PUBLICITARIO ARRIBA DEL NAVBAR-----------------
@@ -164,9 +166,15 @@ html, body {
 }
 // --------- FIN DEL NAVBAR CONTAINER--------------  
 
+.imgCoverContainer{
+  margin-top: 76px;
+}
+
            
-           .ContainerCardCart{
-            margin: auto;
+           .PContainerCardCart{
+           
+            margin-top: 200px;
+           
             
             .imgCardCart{
               width: 100px;

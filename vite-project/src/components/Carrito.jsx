@@ -7,7 +7,7 @@ const Carrito = () => {
   const { carrito, PrecioTotal, vaciarCarrito, eliminarProducto } = useContext(context);
 
   if (carrito.length === 0) {
-    return <p>El carrito está vacío.</p>;
+    return <p className='PContainerCardCart'>El carrito está vacío.</p>;
   }
   
   const handleVaciar = () => {

@@ -32,35 +32,6 @@ function Navbar() {
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
      
     <nav className='NavBar'>
       <div>
