@@ -176,23 +176,29 @@ html, body {
   flex-direction: row;
   justify-content: center;
   background-color: #000;
-  .MetodosDePagoContainer{
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 25%;
-    padding: 20px 0;
-    .MetodosDePagoPageMainText{
-      margin-left: 20px;
-
-      h4{
-        margin-bottom: -10px;
+  
+    .MetodosDePagoContainer{
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 25%;
+      padding: 20px 0;
+    
+  
+  
+      .MetodosDePagoPageMainText{
+        margin-left: 20px;
+  
+        h4{
+          margin-bottom: -10px;
+        }
+  
       }
-
     }
-  }
+  
+  
 }
 
 
