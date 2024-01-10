@@ -1,35 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
-import { useScroll } from "framer-motion";
-import { useState } from "react";
+import { app } from '../data/FirebaseConfig';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 
-
-  
 
  function MainPageContainer() {
+ 
+  const [featured, setfeatured] = useState([]);
+  useEffect(() => {
 
-  const [animado, setAnimado] = useState(false);
+    const db = getFirestore(app);
+    const FeatureCollection = collection(db, 'Destacados');
+  
+  const consulta = getDocs(FeatureCollection)
+  consulta
+      .then((respuesta) => {
+        const products = respuesta.docs.map((doc) => {
+            const id = doc.id
+            const data = doc.data()
+            const product = {id, ...data}
+      return product
+})
+    setfeatured(products)
+  })
+  consulta.catch((error) => {
+    console.log(error)
+})
 
-  const { scrollY, scrollDirection } = useScroll();
+}, []);
 
-  if (scrollDirection === "down") {
-    setAnimado(true);
-  }
   return (
     <div>
         <img src="../img/cover.webp" alt=""  className='imgCoverContainer'/>
         <section className='MainPageSectionMetodosDePago'>
-        <motion.div style={{ opacity: 1 }}
-    animate={{
-      opacity: {
-        from: 0,
-        to: 1,
-      },
-    }}
-    transition={{ delay: 3 }}
-    initial={animado ? "none" : "visible"}
-  >
+        
+
           <div className="MetodosDePagoContainer">
      
             <div className="MetodosDePagoPageMainSvg">
@@ -41,7 +46,7 @@ import { useState } from "react";
             </div>
            
           </div>
-          </motion.div>
+        
           
           <div className="MetodosDePagoContainer">
             <div className="MetodosDePagoPageMainSvg">
@@ -65,6 +70,7 @@ import { useState } from "react";
         <div>
             <h1>Productos destacados </h1>
             <Link to="/Products">Ver todos.. </Link>
+           
         </div>
     </div>
     
