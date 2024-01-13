@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { app } from '../data/FirebaseConfig';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { getFirestore, collection, getDocs} from 'firebase/firestore';
 
 
  function MainPageContainer() {
- 
-  const [featured, setfeatured] = useState([]);
-  useEffect(() => {
-
-    const db = getFirestore(app);
-    const FeatureCollection = collection(db, 'Destacados');
+  const [products, setProducts] = useState([]);
   
-  const consulta = getDocs(FeatureCollection)
+  useEffect(() => {
+    const db = getFirestore(app);
+  const productsCollection = collection(db, 'Destacados');
+  
+  const consulta = getDocs(productsCollection);
+  
   consulta
-      .then((respuesta) => {
-        const products = respuesta.docs.map((doc) => {
-            const id = doc.id
-            const data = doc.data()
-            const product = {id, ...data}
-      return product
-})
-    setfeatured(products)
-  })
-  consulta.catch((error) => {
-    console.log(error)
-})
-
+    .then((respuesta) => {
+      const products = respuesta.docs.map((doc) => {
+        const id = doc.id;
+        const data = doc.data();
+        const product = { id, ...data };
+        return product;
+      });
+      setProducts(products);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }, []);
-
+ 
   return (
     <div>
         <img src="../img/cover.webp" alt=""  className='imgCoverContainer'/>
@@ -67,11 +66,26 @@ import { getFirestore, collection, getDocs, query, where } from 'firebase/firest
             </div>
           </div>
         </section>
-        <div>
-            <h1>Productos destacados </h1>
-            <Link to="/Products">Ver todos.. </Link>
-           
-        </div>
+        {products && products.length > 0 && (
+  <div>
+    <h1>Productos destacados</h1>
+    <div class="carousel-container">
+    <div class="cards-wrapper" id="cardsWrapper">
+      {products.map((product) => (
+        <div class="card" key={product.id}>
+          <div>{product.name}</div>
+          <div>{product.price}</div>
+          <div>{product.img}</div>
+          <div>{product.stock}</div>
+          </div>
+      ))}
+    </div>
+    <button class="prev-btn" onclick="prevCard()">Anterior</button>
+    <button class="next-btn" onclick="nextCard()">Siguiente</button>
+    </div>
+    <Link to="/Products">Ver todos.. </Link>
+  </div>
+)}
     </div>
     
   )
