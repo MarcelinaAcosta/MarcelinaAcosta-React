@@ -1,6 +1,7 @@
 @import 'media-queries';
 
 
+
 html, body {
     margin: 0;
     padding: 0;
@@ -223,6 +224,63 @@ html, body {
   
 }
 
+// ------------------ CARROUSEL-------------------------
+
+
+.carousel-container {
+  width: 100%;
+  max-width: 964px;
+  position: relative;
+}
+
+.cards-wrapper {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  height: 0;
+}
+
+.card {
+  width: 180px;
+  height: 180px;
+  background: green;
+  overflow: hidden;
+}
+
+.prev-btn,
+.next-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.prev-btn {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  // display: none;
+}
+
+.next-btn {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
 
 
            .PContainerCardCart{

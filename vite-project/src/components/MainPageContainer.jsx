@@ -1,33 +1,88 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Component} from 'react'
 import { Link } from 'react-router-dom';
 import { app } from '../data/FirebaseConfig';
 import { getFirestore, collection, getDocs} from 'firebase/firestore';
+import { useRef } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
- function MainPageContainer() {
-  const [products, setProducts] = useState([]);
+
+
+  function SampleNextArrow(props) {
+const {className, style, onClick} = props;
+    return (<div className={className} style={style} onClick={onClick}></div>)
+  }
+  function  SamplePrevArrow(props) {
+    const {className, style, onClick} = props;
+    return(
+      <div className="className" style={{}} onClick={onclick}></div>
+    )
+  }
+
   
-  useEffect(() => {
-    const db = getFirestore(app);
-  const productsCollection = collection(db, 'Destacados');
+
+  function MainPageContainer() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      initialSlide: 0,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
   
-  const consulta = getDocs(productsCollection);
+    const [products, setProducts] = useState([]);
   
-  consulta
-    .then((respuesta) => {
-      const products = respuesta.docs.map((doc) => {
-        const id = doc.id;
-        const data = doc.data();
-        const product = { id, ...data };
-        return product;
-      });
-      setProducts(products);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, []);
- 
+    useEffect(() => {
+      const fetchData = async () => {
+        const db = getFirestore(app);
+        const productsCollection = collection(db, 'Destacados');
+        try {
+          const respuesta = await getDocs(productsCollection);
+          const productsData = respuesta.docs.map((doc) => {
+            const id = doc.id;
+            const data = doc.data();
+            const product = { id, ...data };
+            return product;
+          });
+          setProducts(productsData);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+  
+      fetchData();
+    }, []);
   return (
     <div>
         <img src="../img/cover.webp" alt=""  className='imgCoverContainer'/>
@@ -69,25 +124,54 @@ import { getFirestore, collection, getDocs} from 'firebase/firestore';
         {products && products.length > 0 && (
   <div>
     <h1>Productos destacados</h1>
-    <div class="carousel-container">
-    <div class="cards-wrapper" id="cardsWrapper">
-      {products.map((product) => (
-        <div class="card" key={product.id}>
-          <div>{product.name}</div>
-          <div>{product.price}</div>
-          <div>{product.img}</div>
-          <div>{product.stock}</div>
+    {/* <div className="carousel-container" ref={carouselRef}> */}
+            <div className="cards-wrapper" id="cardsWrapper">
+              {products.map((product) => (
+                <div className="card" key={product.id}>
+                  <div>{product.name}</div>
+                  <div>{product.price}</div>
+                  <div><img src={product.img}></img></div>
+                  <div>{product.stock}</div>
+                </div>
+              ))}
+            {/* </div> */}
           </div>
-      ))}
-    </div>
-    <button class="prev-btn" onclick="prevCard()">Anterior</button>
-    <button class="next-btn" onclick="nextCard()">Siguiente</button>
-    </div>
+          {/* <button className="prev-btn" onClick={handlePrevClick} style={{ display: showPrevButton ? 'flex' : 'none' }}>
+            Anterior
+          </button>
+          <button className="next-btn" onClick={handleNextClick} style={{ display: showNextButton ? 'flex' : 'none' }}>
+            Siguiente
+          </button> */}
+          <div>
+        <h2> Single Item</h2>
+        <Slider {...settings}>
+          <div>
+            <img src="https://www.shutterstock.com/image-photo/full-length-photo-lovely-woman-260nw-2304279153.jpg" alt="" />
+          </div>
+          <div>
+            <img src="https://www.shutterstock.com/image-photo/portrait-beautiful-young-woman-glasses-260nw-1658170549.jpg" alt="" />
+          </div>
+          <div>
+            <img src="https://www.shutterstock.com/image-photo/asian-thai-happy-portrait-beautiful-260nw-1799261152.jpg" alt="" />
+          </div>
+          <div>
+            <img src="https://www.shutterstock.com/image-photo/cheerful-brunette-asian-woman-dance-260nw-1957802446.jpg" alt="" />
+          </div>
+          <div>
+          <img src="https://www.shutterstock.com/image-photo/smiling-funny-young-brunette-woman-260nw-1873451212.jpg" alt="" />
+          </div>
+          <div>
+           <img src="https://www.shutterstock.com/image-photo/young-smiling-happy-couple-two-260nw-2313381189.jpg" alt="" />
+          </div>
+        </Slider>
+      </div>
     <Link to="/Products">Ver todos.. </Link>
   </div>
 )}
     </div>
     
   )
-}
+        };
+  
+
 export default MainPageContainer;
