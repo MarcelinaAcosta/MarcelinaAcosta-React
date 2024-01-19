@@ -12,12 +12,13 @@ import "slick-carousel/slick/slick-theme.css";
 
   function SampleNextArrow(props) {
 const {className, style, onClick} = props;
-    return (<div className={className} style={style} onClick={onClick}></div>)
+    return (
+    <div className={className} style={{...style, display: "flex", background: "grey", border: "2px solid black" , height: "20vh", alignItems: "center"}} onClick={onClick}></div>)
   }
   function  SamplePrevArrow(props) {
-    const {className, style, onClick} = props;
+    const {className, style,  onClick} = props;
     return(
-      <div className="className" style={{}} onClick={onclick}></div>
+      <div className={className} style={{...style, display: "flex", background: "grey", border: "2px solid black" , height: "20vh", alignItems: "center"}} onClick={onClick}></div>
     )
   }
 
@@ -29,7 +30,7 @@ const {className, style, onClick} = props;
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 3,
       initialSlide: 0,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
@@ -124,28 +125,11 @@ const {className, style, onClick} = props;
         {products && products.length > 0 && (
   <div>
     <h1>Productos destacados</h1>
-    {/* <div className="carousel-container" ref={carouselRef}> */}
-            <div className="cards-wrapper" id="cardsWrapper">
-              {products.map((product) => (
-                <div className="card" key={product.id}>
-                  <div>{product.name}</div>
-                  <div>{product.price}</div>
-                  <div><img src={product.img}></img></div>
-                  <div>{product.stock}</div>
-                </div>
-              ))}
-            {/* </div> */}
-          </div>
-          {/* <button className="prev-btn" onClick={handlePrevClick} style={{ display: showPrevButton ? 'flex' : 'none' }}>
-            Anterior
-          </button>
-          <button className="next-btn" onClick={handleNextClick} style={{ display: showNextButton ? 'flex' : 'none' }}>
-            Siguiente
-          </button> */}
-          <div>
+   
         <h2> Single Item</h2>
-        <Slider {...settings}>
-          <div>
+       
+        <Slider style={{marginLeft: "40px", marginRight: "40px", border: "2px solid black", height: "550px", background: "yellow"}} {...settings}>
+          {/* <div>
             <img src="https://www.shutterstock.com/image-photo/full-length-photo-lovely-woman-260nw-2304279153.jpg" alt="" />
           </div>
           <div>
@@ -162,9 +146,22 @@ const {className, style, onClick} = props;
           </div>
           <div>
            <img src="https://www.shutterstock.com/image-photo/young-smiling-happy-couple-two-260nw-2313381189.jpg" alt="" />
-          </div>
+          </div> */}
+          
+          
+              {products.map((product) => (
+                <div className="card" key={product.id}>
+                   <div><img src={product.img}></img></div>
+                  <div>{product.name}</div>
+                  <div>{product.price}</div>
+                 
+                  <div>{product.stock}</div>
+                </div>
+              ))}
+           
+         
         </Slider>
-      </div>
+   
     <Link to="/Products">Ver todos.. </Link>
   </div>
 )}
