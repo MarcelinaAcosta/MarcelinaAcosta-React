@@ -30,7 +30,7 @@ const {className, style, onClick} = props;
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 3,
+      slidesToScroll: 1,
       initialSlide: 0,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
@@ -124,12 +124,12 @@ const {className, style, onClick} = props;
         </section>
         {products && products.length > 0 && (
   <div>
-    <h1>Productos destacados</h1>
-   
-        <h2> Single Item</h2>
-       
-        <Slider style={{marginLeft: "40px", marginRight: "40px", border: "2px solid black", height: "550px", background: "yellow"}} {...settings}>
-          {/* <div>
+    
+        <h2> Destacados</h2>
+        
+        {/* <Slider style={{margin: "0 30px"}} {...settings}>
+          <div>
+            <p>hola</p>
             <img src="https://www.shutterstock.com/image-photo/full-length-photo-lovely-woman-260nw-2304279153.jpg" alt="" />
           </div>
           <div>
@@ -146,22 +146,23 @@ const {className, style, onClick} = props;
           </div>
           <div>
            <img src="https://www.shutterstock.com/image-photo/young-smiling-happy-couple-two-260nw-2313381189.jpg" alt="" />
-          </div> */}
-          
-          
+          </div>
+          </Slider> */}
+          <Slider style={{margin: "0 150px"}} {...settings}>
               {products.map((product) => (
-                <div className="card" key={product.id}>
-                   <div><img src={product.img}></img></div>
-                  <div>{product.name}</div>
-                  <div>{product.price}</div>
+                <div>
+                   <div className='card'  key={product.id}><img src={product.img} style={{width:"300px", height: "400px"}}></img></div>
+                   <div className='card'>{product.name}</div>
+                  <div className='card'>{product.price}</div>
                  
-                  <div>{product.stock}</div>
-                </div>
+                  <div className='card'>{product.stock}</div> 
+                 </div> 
               ))}
+               </Slider>
            
          
-        </Slider>
-   
+        
+  
     <Link to="/Products">Ver todos.. </Link>
   </div>
 )}
