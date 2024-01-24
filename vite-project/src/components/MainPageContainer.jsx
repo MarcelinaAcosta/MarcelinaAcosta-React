@@ -148,18 +148,18 @@ const {className, style, onClick} = props;
            <img src="https://www.shutterstock.com/image-photo/young-smiling-happy-couple-two-260nw-2313381189.jpg" alt="" />
           </div>
           </Slider> */}
-          <Slider style={{margin: "0 320px"}} {...settings}>
+          <Slider className="SliderContainerFeatured"  {...settings}>
               {products.map((product) => (
                 <div className='containerFeatured'>
-                   <div className='card'  key={product.id} style={{background:"yellow", margin: "auto 10px"}}>
-                    <img src={product.img} style={{ width: "100%",height: "400px"}}></img>
+                   <div className='cardSliderFeatured'  key={product.id}>
+                    <img src={product.img} ></img>
                     </div>
-                   <div className='card' style={{paddingLeft:"10px"}}>{product.name}</div>
-                  <div className='card'style={{paddingLeft:"10px"}}><b>{product.price}</b></div>
+                   <div className='cardNamePriceStock'>{product.name}</div>
+                  <div className='cardNamePriceStock'><b>{product.price}</b></div>
                  
-                  <div className='card' style={{paddingLeft:"10px"}}>{product.stock}</div> 
-                  <button style={{background:"#000", width:"140px", height:"40px", color:"#fff", border:"none", borderRadius:"2px", margin:"10px", fontSize:"15px"}}>Comprar</button>
-                  <button style={{background:"gray", width:"140px", height:"40px",color:"#fff", border:"none", margin:"10px 0px 10px 0", fontSize:"15px"}}>Ver</button>
+                  <div className='cardNamePriceStock'>{product.stock}</div> 
+                  <button  className='ButtonSlideFeatured'>Comprar</button>
+                  <button className='ButtonSlideFeatured' id='ButtonFeaturedSeeMore'>Ver</button>
                  </div> 
               ))}
                </Slider>

@@ -225,8 +225,57 @@ html, body {
   
 }
 
-// ------------------ CARROUSEL-------------------------
+// ------------------ SLIDER-------------------------
+.SliderContainerFeatured{
+  margin: 0 300px;
+  
+  
+  .containerFeatured{
+    position: relative;
+   
+    &:hover{
+      border: 1px solid gray;
+      .ButtonSlideFeatured {
+        visibility: visible;
+         opacity: 1;/* Cambiado de "none" a "block" para mostrar el botón al hacer hover */
+    }
+          }
+    .cardSliderFeatured{
+     margin: 0 5px;
+     
+      img{
+        width: 100%;
+        height: 400px
+      }
+    }
+    .cardNamePriceStock{
+      padding-left: 10px;
+     
+    }
+    .ButtonSlideFeatured{
+      visibility:hidden;
+      
+      bottom: 10px; 
+      background: #000;
+      width:140px;
+      height:40px;
+      color:#fff;
+      border:none; 
+      border-radius: 2px; 
+      margin:10px 5px;
+      font-size:15px;
+      opacity: 0;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+   
+    }
+    #ButtonFeaturedSeeMore{
+      background: gray;
+     
+    }
+  }
+  
 
+}
 
 // .carousel-container {
 //   width: 100%;
