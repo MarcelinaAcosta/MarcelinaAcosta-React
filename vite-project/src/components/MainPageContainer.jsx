@@ -13,12 +13,12 @@ import "slick-carousel/slick/slick-theme.css";
   function SampleNextArrow(props) {
 const {className, style, onClick} = props;
     return (
-    <div className={className} style={{...style, display: "flex", background: "grey", border: "2px solid black" , height: "20vh", alignItems: "center"}} onClick={onClick}></div>)
+    <div className={className} style={{...style, display: "flex", background: "#000", height: "50px", width:"35px", alignItems:"center", paddingLeft:"10px", marginRight:"20px"}} onClick={onClick}></div>)
   }
   function  SamplePrevArrow(props) {
     const {className, style,  onClick} = props;
     return(
-      <div className={className} style={{...style, display: "flex", background: "grey", border: "2px solid black" , height: "20vh", alignItems: "center"}} onClick={onClick}></div>
+      <div className={className} style={{...style, display: "flex", background: "#000", height: "50px", width:"35px", alignItems:"center", paddingLeft:"10px", marginLeft:"20px", zIndex:"999"}} onClick={onClick}></div>
     )
   }
 
@@ -148,14 +148,18 @@ const {className, style, onClick} = props;
            <img src="https://www.shutterstock.com/image-photo/young-smiling-happy-couple-two-260nw-2313381189.jpg" alt="" />
           </div>
           </Slider> */}
-          <Slider style={{margin: "0 150px"}} {...settings}>
+          <Slider style={{margin: "0 320px"}} {...settings}>
               {products.map((product) => (
-                <div>
-                   <div className='card'  key={product.id}><img src={product.img} style={{width:"300px", height: "400px"}}></img></div>
-                   <div className='card'>{product.name}</div>
-                  <div className='card'>{product.price}</div>
+                <div className='containerFeatured'>
+                   <div className='card'  key={product.id} style={{background:"yellow", margin: "auto 10px"}}>
+                    <img src={product.img} style={{ width: "100%",height: "400px"}}></img>
+                    </div>
+                   <div className='card' style={{paddingLeft:"10px"}}>{product.name}</div>
+                  <div className='card'style={{paddingLeft:"10px"}}><b>{product.price}</b></div>
                  
-                  <div className='card'>{product.stock}</div> 
+                  <div className='card' style={{paddingLeft:"10px"}}>{product.stock}</div> 
+                  <button style={{background:"#000", width:"140px", height:"40px", color:"#fff", border:"none", borderRadius:"2px", margin:"10px", fontSize:"15px"}}>Comprar</button>
+                  <button style={{background:"gray", width:"140px", height:"40px",color:"#fff", border:"none", margin:"10px 0px 10px 0", fontSize:"15px"}}>Ver</button>
                  </div> 
               ))}
                </Slider>
@@ -163,7 +167,7 @@ const {className, style, onClick} = props;
          
         
   
-    <Link to="/Products">Ver todos.. </Link>
+    <Link to="/Products" style={{margin:"100px"}}>Ver todos.. </Link>
   </div>
 )}
     </div>
